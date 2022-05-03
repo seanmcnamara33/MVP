@@ -1,6 +1,7 @@
 import React from 'react';
 import AllBoulders from './AllBoulders.jsx';
 import {BsFacebook, BsInstagram, BsFillChatLeftTextFill} from 'react-icons/bs';
+import Stars from '../../Helpers/Stars.jsx';
 
 const BoulderInformation = ({currentBoulder, allBoulders}) => {
   let sprayIcons = [<BsFacebook/>, <BsInstagram/>, <BsFillChatLeftTextFill/>]
@@ -9,7 +10,7 @@ const BoulderInformation = ({currentBoulder, allBoulders}) => {
       <h3>Boulder Information</h3>
       <div className='name-and-grade container'>
         <h2><b>{currentBoulder.name}</b></h2>
-        <div>STAR COMPONENT HERE</div>
+        <Stars currentBoulder={currentBoulder}/>
       </div>
       <div className='grade-container container'>
         <p>Grade:</p>
