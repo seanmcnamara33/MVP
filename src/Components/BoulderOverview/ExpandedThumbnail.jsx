@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExpandedThumbnail = ({currentBoulder, currentImageIndex}) => {
+const ExpandedThumbnail = ({currentBoulder, currentImageIndex, onThumbnailClick}) => {
   if (!currentBoulder.photos[0]) {
     currentBoulder.photos[0] = './jerremy.jpg';
   }
@@ -8,9 +8,9 @@ const ExpandedThumbnail = ({currentBoulder, currentImageIndex}) => {
     <div className='expanded-thumbnail-container'>
       {currentBoulder.photos.map((photo, index) => {
         if (index === currentImageIndex) {
-          return <div className='selected-expanded-thumbnail'></div>
+          return <div onClick={(event) => onThumbnailClick(event)} data-index={index} className='selected-expanded-thumbnail'></div>
         } else {
-          return <div className='expanded-thumbnail'></div>
+          return <div onClick={(event) => onThumbnailClick(event)} data-index={index} className='expanded-thumbnail'></div>
         }
       })}
     </div>
