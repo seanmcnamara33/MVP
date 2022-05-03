@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState, useEffect} from 'react';
+import Navbar from './Components/Navbar.jsx';
+import BoulderOverview from './Components/BoulderOverview/BoulderOverview.jsx';
+import 'bulma/css/bulma.min.css';
 
-function App() {
+const App = () => {
+  const [currentBoulder, setCurrentBoulder] = useState({name: 'blah', grade: 5, type: 'Boulder', fa: 'me', description: 'Hard', photos: []})
+  const [allBoulders, setAllBoulders] = useState([{name: 'Blah', grade: 5, type: 'Boulder', fa: 'me', description: 'Hard', photos: []}, {name: 'BlahBlah', grade: 3, type: 'Boulder', fa: 'me', description: 'Hard', photos: []}, {name: 'BlahBlahBlah', grade: 2, type: 'Boulder', fa: 'me', description: 'Hard', photos: []}, {name: 'Okay', grade: 1, type: 'Boulder', fa: 'me', description: 'Hard', photos: []}, {name: 'Alright', grade: 8, type: 'Boulder', fa: 'me', description: 'Hard', photos: []}])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <BoulderOverview setCurrentBoulder={setCurrentBoulder} currentBoulder={currentBoulder} allBoulders={allBoulders}/>
     </div>
   );
 }

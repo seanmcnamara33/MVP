@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 2em;
+  background-color: grey;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-form {
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.boulder-overview {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boulder-information {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
+  height: 80vh;
+  width: 35%;
+}
+
+.image-gallery {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px solid black;
+  height: 80vh;
+  width:  65%;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.total-boulders {
+  display: flex;
+  flex-direction: column;
+}
+
+.boulder-set {
+  display: flex;
+}
+
+.boulder-thumbnail {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.spray-icons {
+  display: flex;
+}
+
+.image-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-nav-btn {
+  all: unset;
+}
+
+.current-image {
+  border-radius: 3px;
+  object-fit: contain;
+}
+
+.current-image:hover {
+  cursor: zoom-in;
+}
+
+.current-expanded-image {
+  border-radius: 3px;
+  object-fit: contain;
+}
+
+.expanded-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px 5px 0px;
+}
+
+.expanded-image {
+  border-radius: 20px;
+  max-height: 60%;
+  max-width: 75%;
+}
+
+.expanded-boulder-overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.expanded-thumbnail {
+  height: 25px;
+  width: 25px;
+  background-color: black;
+}
+
+.selected-expanded-thumbnail {
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.expanded-thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 50%;
 }
