@@ -1,9 +1,9 @@
-const averageRating = (ratings) => {
+const averageRating = (reviews) => {
   var total = 0;
-  for (var i = 0; i < ratings.length; i++) {
-    total += ratings[i];
+  for (var i = 0; i < reviews.length; i++) {
+    total += reviews[i];
   }
-  return (total/ratings.length)
+  return (total/reviews.length)
 }
 
 module.exports.averageRating = averageRating;

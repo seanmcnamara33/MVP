@@ -135,6 +135,10 @@
   --star-size: 22px;
   --star-color: grey;
   --star-background: black;
+  --bar-height: 20px;
+  --bar-width: 80%;
+  --bar-background: green;
+  --bar-color: grey;
 }
 
 .Stars {
@@ -271,21 +275,11 @@
 
 .message-body {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .message-footer {
   display: flex;
   justify-content: space-between;
-}
-
-.message-author {
-  margin: 5px;
-}
-
-.message-date {
-  margin: 5px;
 }
 
 .like-dislike-container {
@@ -330,7 +324,7 @@
 .star-rating-container {
   display: flex;
   flex-direction: column;
-  height: 25%;
+  height: 50%;
   width: 100%;
   border: 1px solid black;
 }
@@ -346,12 +340,13 @@
 .boulder-tags-container {
   display: flex;
   flex-direction: column;
-  height: 35%;
   width: 100%;
   border: 1px solid black;
 }
 
 .post-review-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 35%;
   border: 1px solid black;
@@ -364,3 +359,56 @@
   overflow: hidden;
   overflow-y: scroll;
 }
+
+.ratings-bar {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: gray;
+  box-shadow: 1px 1px 2px #000000;
+}
+
+.ratings-innerbar {
+  position: relative;
+  background-color: black;
+  height: 9px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px #aeaeae;
+}
+
+.ratings {
+ font-size: small;
+ float: right;
+}
+
+.review-footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.relevant-tags {
+  width: 50%;
+  height: 100%;
+}
+
+.review-submit {
+  width: 50%;
+  height: 50%;
+}
+
+.review-rating {
+  text-align: right;
+}
+
+.review-body-container {
+  display: flex;
+  justify-content: space-between;
+}
+

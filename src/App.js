@@ -6,18 +6,20 @@ import MessageBoardOverview from './Components/MessageBoard/MessageBoardOverview
 import ReviewsOverview from './Components/Reviews/ReviewsOverview.jsx';
 import 'bulma/css/bulma.min.css';
 
-let boulderExample = {name: 'blah', grade: 5, type: 'Boulder', fa: 'me', description: 'Hard', ratings: [1, 2, 3, 1, 2, 5, 5], photos: ['//images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1103&q=80]', './jerremy.jpg'], messages: [{author: 'john', message: 'I liked this climb', date: '08/16/1991', tags: ['short', 'run-out']}, {author: 'billy', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bilely', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out', 'hard']}, {author: 'bildfly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bilssly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bidlly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bigglly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out', 'bad-landing']}]};
+let boulderExample = {name: 'blah', grade: 5, type: 'Boulder', fa: 'me', description: 'Hard', reviews: [1, 2, 3, 1, 2, 5, 5], photos: ['//images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1103&q=80]', './jerremy.jpg'], messages: [{author: 'john', message: 'I liked this climb', date: '08/16/1991', tags: ['short', 'run-out']}, {author: 'billy', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bilely', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out', 'hard']}, {author: 'bildfly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bilssly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bidlly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out']}, {author: 'bigglly', message: 'I hated this climb', date: '09/16/2020', tags: ['short', 'run-out', 'bad-landing']}]};
+
+let boulderExampleReviews = [{author: 'billy', rating: 4, date: '08/16/2026', tags: ['short', 'hard', 'run-out'], message: 'I would definitely climb this one again'}, {author: 'bobby', rating: 2, date: '08/16/2028', tags: ['short', 'hard', 'run-out', 'scary'], message: 'Thought I was gonna die'}, {author: 'samuel', rating: 1, date: '08/16/2126', tags: ['run-out', 'dangerous'], message: 'I was terrified'}, {author: 'scott', rating: 5, date: '08/16/1906', tags: ['shorty-friendly'], message: 'Everyone else is a baby'}];
 
 const App = () => {
   const [currentBoulder, setCurrentBoulder] = useState(boulderExample)
-
+  const [currentBoulderReviews, setCurrentBoulderReviews] = useState(boulderExampleReviews);
   const [allBoulders, setAllBoulders] = useState([{name: 'Blah', grade: 5, type: 'Boulder', fa: 'me', description: 'Hard', reviews: [1, 2, 3, 1, 2, 5, 5], photos: []}, {name: 'BlahBlah', grade: 3, type: 'Boulder', fa: 'me', description: 'Hard', reviews: [1, 2, 3, 1, 2, 5, 5], photos: []}, {name: 'BlahBlahBlah', grade: 2, type: 'Boulder', fa: 'me', description: 'Hard', reviews: [1, 2, 3, 1, 2, 5, 5], photos: []}, {name: 'Okay', grade: 1, type: 'Boulder', fa: 'me', description: 'Hard', reviews: [1, 2, 3, 1, 2, 5, 5], photos: []}, {name: 'Alright', grade: 8, type: 'Boulder', fa: 'me', description: 'Hard', reviews: [1, 2, 3, 1, 2, 5, 5], photos: []}])
   return (
     <div className="App">
       <Navbar />
       <BoulderOverview setCurrentBoulder={setCurrentBoulder} currentBoulder={currentBoulder} allBoulders={allBoulders}/>
       <MessageBoardOverview currentBoulder={currentBoulder}/>
-      <ReviewsOverview currentBoulder={currentBoulder}/>
+      <ReviewsOverview currentBoulderReviews={currentBoulderReviews} currentBoulder={currentBoulder}/>
     </div>
   );
 }

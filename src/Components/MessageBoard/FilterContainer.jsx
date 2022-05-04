@@ -2,11 +2,11 @@ import React from 'react';
 import FilterPosts from './FilterPosts.jsx';
 import ClimbTags from './ClimbTags.jsx';
 
-const FilterContainer = ({onTagClick, tags, onRelevantTagClick}) => {
+const FilterContainer = ({currentBoulder}) => {
   return (
     <div className='filter-container'>
-      <FilterPosts tags={tags} onRelevantTagClick={onRelevantTagClick}/>
-      <ClimbTags onTagClick={onTagClick}/>
+      <FilterPosts/>
+      <ClimbTags currentBoulder={currentBoulder}/>
     </div>
   );
 }
