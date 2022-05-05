@@ -1,4 +1,4 @@
-const {getClimbsForOneBoulder, getReviewsForOneClimb, getReviewsForAllClimbs, getMessagesForAllClimbs, postToMessages} = require('../database/index.js');
+const {getClimbsForOneBoulder, getReviewsForOneClimb, getReviewsForAllClimbs, getMessagesForAllClimbs, postToMessages, postToReviews} = require('../database/index.js');
 const express = require('express')
 const cors = require('cors');
 const app = express();
@@ -79,8 +79,9 @@ app.get('/boulders/:sectorName', async (req, res) => {
   res.send(allBoulderData);
 })
 
-app.post('/reviews', (req, res) => {
-
+app.post('/reviews', async (req, res) => {
+  await postToReviews(req.body);
+  res.sendStatus(201);
 })
 
 app.post('/messages', async (req, res) => {

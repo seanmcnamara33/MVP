@@ -9,7 +9,6 @@ const pool = new Pool({
 })
 
 const getClimbsForOneBoulder = async (sectorName) => {
-  // console.log(sectorName);
   try {
     let client = await pool.connect();
     let boulders = await client.query(
@@ -73,7 +72,6 @@ const getMessagesForAllClimbs = async (sectorId) => {
 };
 
 const postToMessages = async (message) => {
-  console.log(message);
   try {
     let client = await pool.connect();
     let boulderId = await client.query(
@@ -82,13 +80,35 @@ const postToMessages = async (message) => {
     await client.query(
       `INSERT INTO messages (author, message, date, boulder_id, sector_id) VALUES ('${message.author}', '${message.message}', ${message.date}, ${boulderId.rows[0].id}, ${boulderId.rows[0].sector_id})`
     );
+    client.release();
   } catch(err) {
     console.log(err);
   }
 };
+
+const postToReviews = async (review) => {
+  try {
+    let client = await pool.connect();
+    let boulderId = await client.query(
+      `SELECT id, sector_id, area_id FROM boulders WHERE boulders.name = '${review.boulder}'`
+    );
+    let reviewId = await client.query(
+      `INSERT INTO reviews (product_id, rating, date, body, author) VALUES (${boulderId.rows[0].id}, ${review.rating}, ${review.date}, '${review.body}', '${review.author}') RETURNING id`
+    );
+    for (var i = 0; i < review.tags.length; i++) {
+      await client.query(
+        `INSERT INTO tags (name, review_id, boulder_id) VALUES ('${review.tags[i]}', ${reviewId.rows[0].id}, ${boulderId.rows[0].id})`
+      );
+    }
+    client.release();
+  } catch(err) {
+    console.log(err);
+  }
+}
 
 module.exports.getClimbsForOneBoulder = getClimbsForOneBoulder;
 module.exports.getReviewsForOneClimb = getReviewsForOneClimb;
 module.exports.getReviewsForAllClimbs = getReviewsForAllClimbs;
 module.exports.getMessagesForAllClimbs = getMessagesForAllClimbs;
 module.exports.postToMessages = postToMessages;
+module.exports.postToReviews = postToReviews;

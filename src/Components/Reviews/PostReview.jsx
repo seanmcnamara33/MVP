@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PostReview = ({relevantTags, onReviewPostChange, onRelevantTagClick}) => {
+const PostReview = ({relevantTags, onReviewPostChange, onRelevantTagClick, onCurrentRatingChange, onSubmitReviewButtonClick}) => {
   return (
     <div className='post-review-container'>
       <textarea onChange={(event) => onReviewPostChange(event)} id='post-message' name='post-message' placeholder='Create Post Here...'></textarea>
@@ -14,18 +14,18 @@ const PostReview = ({relevantTags, onReviewPostChange, onRelevantTagClick}) => {
         <div className='submit-stars-container'>
           <h2>Select Rating:</h2>
           <div className="stars">
-            <input type="radio" id="rate-5" name="rating-1"></input>
+            <input type="radio" id="rate-5" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
             <label for="rate-5"></label>
-            <input type="radio" id="rate-4" name="rating-1"></input>
+            <input type="radio" id="rate-4" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
             <label for="rate-4"></label>
-            <input type="radio" id="rate-3" name="rating-1"></input>
+            <input type="radio" id="rate-3" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
             <label for="rate-3"></label>
-            <input type="radio" id="rate-2" name="rating-1"></input>
+            <input type="radio" id="rate-2" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
             <label for="rate-2"></label>
-            <input type="radio" id="rate-1" name="rating-1"></input>
+            <input type="radio" id="rate-1" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
             <label for="rate-1"></label>
           </div>
-          <button className='review-submit'>Submit Post</button>
+          <button onClick={() => onSubmitReviewButtonClick()} className='review-submit'>Submit Post</button>
         </div>
       </div>
     </div>
