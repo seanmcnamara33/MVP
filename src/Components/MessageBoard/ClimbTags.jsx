@@ -14,7 +14,7 @@ const ClimbTags = ({currentBoulder}) => {
       <h2>Tags Associated With This Boulder:</h2>
       <div className='boulder-tags'>
         {reducedTags.map((tag, index) => {
-          return <span className='tag'>{tag}</span>
+          return <span key={`reducedTag${index}`}className='tag'>{tag}</span>
         })}
       </div>
     </div>

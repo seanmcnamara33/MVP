@@ -8,7 +8,7 @@ const IndividualMessage = ({postTags, author, message, date}) => {
       <div className='message-footer'>
         <div className='post-tags'>
           {postTags.map((tag, index) => {
-            return <span className='post-tag tag'>{tag}</span>
+            return <span key={`postTag${index}`} className='post-tag tag'>{tag}</span>
           })}
         </div>
         <div className='like-dislike-container'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {BsFacebook, BsInstagram, BsFillChatLeftTextFill} from 'react-icons/bs';
 
-const CreatePost = ({onMessageChange}) => {
+const CreatePost = ({onMessageChange, onSubmitMessageButtonClick}) => {
   let sprayIcons = [<BsFacebook/>, <BsInstagram/>, <BsFillChatLeftTextFill/>]
   return (
     <div className='create-post-container'>
@@ -9,10 +9,10 @@ const CreatePost = ({onMessageChange}) => {
       <div className='post-footer-container'>
         <div className='post-social-icons'>
           {sprayIcons.map((icon, index) => {
-            return <div className='icon'>{icon}</div>
+            return <div key={`postSprayIcon${index}`} className='icon'>{icon}</div>
           })}
         </div>
-        <button className='post-submit'>Submit Post</button>
+        <button onClick={() => onSubmitMessageButtonClick()} className='post-submit'>Submit Post</button>
       </div>
     </div>
   );

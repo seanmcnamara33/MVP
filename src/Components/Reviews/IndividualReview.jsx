@@ -14,7 +14,7 @@ const IndividualReview = ({author, date, message, tags, rating}) => {
       <div className='review-footer-container'>
         <div className='post-tags'>
           {tags.map((tag, index) => {
-            return <span className='post-tag tag'>{tag}</span>
+            return <span key={`review${tag}`} className='post-tag tag'>{tag}</span>
           })}
         </div>
         <div className='like-dislike-container'>

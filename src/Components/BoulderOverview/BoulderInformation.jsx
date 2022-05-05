@@ -3,7 +3,7 @@ import AllBoulders from './AllBoulders.jsx';
 import {BsFacebook, BsInstagram, BsFillChatLeftTextFill} from 'react-icons/bs';
 import Stars from '../../Helpers/Stars.jsx';
 
-const BoulderInformation = ({currentBoulder, allBoulders}) => {
+const BoulderInformation = ({currentBoulder, allBoulders, onBoulderClick}) => {
   let sprayIcons = [<BsFacebook/>, <BsInstagram/>, <BsFillChatLeftTextFill/>]
   return (
     <div className='boulder-information'>
@@ -28,7 +28,7 @@ const BoulderInformation = ({currentBoulder, allBoulders}) => {
         <p>Description:</p>
         <p><b>{currentBoulder.description}</b></p>
       </div>
-      <AllBoulders allBoulders={allBoulders}/>
+      <AllBoulders allBoulders={allBoulders} onBoulderClick={onBoulderClick}/>
       <div className='ticklist-buttons'>
         <button className='btn'>Add To To-Do</button>
         <button className='btn'>Add To Ticklist</button>
@@ -39,7 +39,7 @@ const BoulderInformation = ({currentBoulder, allBoulders}) => {
         <h5>Spray:</h5>
         <div className='spray-icons'>
           {sprayIcons.map((icon, index) => {
-            return <div className='spray-icon'>{icon}</div>
+            return <div key={`sprayIcon${index}`} className='spray-icon'>{icon}</div>
           })}
         </div>
       </div>

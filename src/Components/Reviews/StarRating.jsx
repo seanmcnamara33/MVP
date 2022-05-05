@@ -8,16 +8,16 @@ const StarRating = ({currentBoulder}) => {
   let five = 0;
   let totalReviews = 0;
 
-  for (var i = 0; i < currentBoulder.reviews.length; i++) {
-    if (currentBoulder.reviews[i] === 1) {
+  for (var i = 0; i < currentBoulder.ratings.length; i++) {
+    if (currentBoulder.ratings[i] === 1) {
       one++;
-    } else if (currentBoulder.reviews[i] === 2) {
+    } else if (currentBoulder.ratings[i] === 2) {
       two++;
-    } else if (currentBoulder.reviews[i] === 3) {
+    } else if (currentBoulder.ratings[i] === 3) {
       three++;
-    } else if (currentBoulder.reviews[i] === 4) {
+    } else if (currentBoulder.ratings[i] === 4) {
       four++;
-    } else if (currentBoulder.reviews[i] === 5) {
+    } else if (currentBoulder.ratings[i] === 5) {
       five++;
     }
     totalReviews++;
@@ -25,25 +25,29 @@ const StarRating = ({currentBoulder}) => {
 
   let ratings = [one, two, three, four, five]
 
-  return (
-    <div className='star-rating-container'>
-      <h2>Star Rating:</h2>
-      <Stars currentBoulder={currentBoulder}/>
-      <div className='star-graph'>
-        {ratings.map((value, index) => {
-        return (
-          <div key={index}>
-            <label> {index + 1} Star <span className='ratings'> {value} total reviews</span></label>
-            <div className='ratings-bar'>
-              <div className='ratings-innerbar' style={{ width: Math.round(value / totalReviews * 100) + '%' }}>
+  if (totalReviews > 0) {
+    return (
+      <div className='star-rating-container'>
+        <h2>Star Rating:</h2>
+        <Stars currentBoulder={currentBoulder}/>
+        <div className='star-graph'>
+          {ratings.map((value, index) => {
+          return (
+            <div key={index}>
+              <label> {index + 1} Star <span className='ratings'> {value} total reviews</span></label>
+              <div className='ratings-bar'>
+                <div className='ratings-innerbar' style={{ width: Math.round(value / totalReviews * 100) + '%' }}>
+                </div>
               </div>
             </div>
-          </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return null;
+  }
 };
 
 export default StarRating;

@@ -5,7 +5,7 @@ const ReviewsView = ({currentBoulderReviews}) => {
   return (
     <div className='reviews-view-container'>
       {currentBoulderReviews.map((boulderReviews, index) => {
-        return <IndividualReview author={boulderReviews.author} date={boulderReviews.date} message={boulderReviews.message} rating={boulderReviews.rating} tags={boulderReviews.tags}/>
+        return <IndividualReview key={`${boulderReviews.author}${boulderReviews.date}`} author={boulderReviews.author} date={boulderReviews.date} message={boulderReviews.message} rating={boulderReviews.rating} tags={boulderReviews.tags}/>
       })}
     </div>
   );

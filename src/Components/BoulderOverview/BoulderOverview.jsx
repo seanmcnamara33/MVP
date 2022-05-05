@@ -4,7 +4,7 @@ import BoulderInformation from './BoulderInformation.jsx';
 import ExpandedGallery from './ExpandedGallery.jsx';
 import ExpandedThumbnail from './ExpandedThumbnail.jsx';
 
-const BoulderOverview = ({currentBoulder, allBoulders}) => {
+const BoulderOverview = ({currentBoulder, allBoulders, onBoulderClick}) => {
   const [currentView, setCurrentView] = useState('default');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -36,7 +36,7 @@ const BoulderOverview = ({currentBoulder, allBoulders}) => {
     return (
       <div className='boulder-overview'>
         <ImageGallery currentBoulder={currentBoulder} allBoulders={allBoulders} onImageClick={onImageClick} currentImageIndex={currentImageIndex} onImageChange={onImageChange} onThumbnailClick={onThumbnailClick}/>
-        <BoulderInformation currentBoulder={currentBoulder} allBoulders={allBoulders}/>
+        <BoulderInformation currentBoulder={currentBoulder} allBoulders={allBoulders} onBoulderClick={onBoulderClick}/>
       </div>
     );
   } else if (currentView === 'expanded') {

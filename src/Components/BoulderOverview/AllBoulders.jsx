@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-const AllBoulders = ({allBoulders}) => {
+const AllBoulders = ({allBoulders, onBoulderClick}) => {
   let boulderSet = [];
   let boulderContainer = [];
   let counter = 1;
@@ -17,9 +17,9 @@ const AllBoulders = ({allBoulders}) => {
   return (
     <div className='total-boulders'>
       {boulderContainer.map((boulders, index) => {
-        return <div className='boulder-set'>
+        return <div key={`set${index}`} className='boulder-set' id={`outer-set${index}`}>
           {boulders.map((boulder, index) => {
-            return <img src={boulder.photos[0]}className='boulder-thumbnail'></img>
+            return <img key={boulder.name} id={`inner-set${index}`} onClick={(event) => onBoulderClick(event, boulder)} src={boulder.photos[0]}className='boulder-thumbnail'></img>
           })}
         </div>
       })}
