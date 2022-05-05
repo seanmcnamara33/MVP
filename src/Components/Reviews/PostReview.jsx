@@ -15,15 +15,15 @@ const PostReview = ({relevantTags, onReviewPostChange, onRelevantTagClick, onCur
           <h2>Select Rating:</h2>
           <div className="stars">
             <input type="radio" id="rate-5" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
-            <label for="rate-5"></label>
+            <label htmlFor="rate-5"></label>
             <input type="radio" id="rate-4" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
-            <label for="rate-4"></label>
+            <label htmlFor="rate-4"></label>
             <input type="radio" id="rate-3" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
-            <label for="rate-3"></label>
+            <label htmlFor="rate-3"></label>
             <input type="radio" id="rate-2" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
-            <label for="rate-2"></label>
+            <label htmlFor="rate-2"></label>
             <input type="radio" id="rate-1" name="rating-1" onChange={(event) => onCurrentRatingChange(event)}></input>
-            <label for="rate-1"></label>
+            <label htmlFor="rate-1"></label>
           </div>
           <button onClick={() => onSubmitReviewButtonClick()} className='review-submit'>Submit Post</button>
         </div>

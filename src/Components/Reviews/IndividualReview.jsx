@@ -3,6 +3,7 @@ import {BsHandThumbsUp, BsHandThumbsDown} from 'react-icons/bs';
 import Stars from '../../Helpers/Stars.jsx';
 
 const IndividualReview = ({author, date, message, tags, rating}) => {
+  let translatedDate = new Date(Number(date)).toISOString();
   return (
     <div className='individual-message'>
       <div className='review-body-container'>
@@ -22,7 +23,7 @@ const IndividualReview = ({author, date, message, tags, rating}) => {
           <div className='dislike-icon'><BsHandThumbsDown/></div>
         </div>
         <div className='review-author'>{author}</div>
-        <div className='review-date'>{date}</div>
+        <div className='review-date'>{translatedDate}</div>
       </div>
     </div>
   );

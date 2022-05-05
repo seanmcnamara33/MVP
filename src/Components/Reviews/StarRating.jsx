@@ -24,30 +24,25 @@ const StarRating = ({currentBoulder}) => {
   }
 
   let ratings = [one, two, three, four, five]
-
-  if (totalReviews > 0) {
-    return (
-      <div className='star-rating-container'>
-        <h2>Star Rating:</h2>
-        <Stars currentBoulder={currentBoulder}/>
-        <div className='star-graph'>
-          {ratings.map((value, index) => {
-          return (
-            <div key={index}>
-              <label> {index + 1} Star <span className='ratings'> {value} total reviews</span></label>
-              <div className='ratings-bar'>
-                <div className='ratings-innerbar' style={{ width: Math.round(value / totalReviews * 100) + '%' }}>
-                </div>
+  return (
+    <div className='star-rating-container'>
+      <h2>Star Rating:</h2>
+      <Stars currentBoulder={currentBoulder}/>
+      <div className='star-graph'>
+        {ratings.map((value, index) => {
+        return (
+          <div key={index}>
+            <label> {index + 1} Star <span className='ratings'> {value} total reviews</span></label>
+            <div className='ratings-bar'>
+              <div className='ratings-innerbar' style={totalReviews > 0 ? { width: Math.round(value / totalReviews * 100) + '%' } : {width: 0}}>
               </div>
             </div>
-            )
-          })}
-        </div>
+          </div>
+          )
+        })}
       </div>
-    );
-  } else {
-    return null;
-  }
+    </div>
+  );
 };
 
 export default StarRating;
