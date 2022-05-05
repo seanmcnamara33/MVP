@@ -16,6 +16,7 @@ const AllBoulders = ({allBoulders, onBoulderClick}) => {
   }
   return (
     <div className='total-boulders'>
+      <h2>All Climbs:</h2>
       {boulderContainer.map((boulders, index) => {
         return <div key={`set${index}`} className='boulder-set' id={`outer-set${index}`}>
           {boulders.map((boulder, index) => {

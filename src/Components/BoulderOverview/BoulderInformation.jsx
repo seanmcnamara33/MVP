@@ -8,23 +8,23 @@ const BoulderInformation = ({currentBoulder, allBoulders, onBoulderClick}) => {
   return (
     <div className='boulder-information'>
       <h3>Boulder Information</h3>
-      <div className='name-and-grade container'>
+      <div className='boulder-container'>
         <h2><b>{currentBoulder.name}</b></h2>
         <Stars currentBoulder={currentBoulder}/>
       </div>
-      <div className='grade-container container'>
+      <div className='boulder-container'>
         <p>Grade:</p>
         <p><b>V{currentBoulder.grade}</b></p>
       </div>
-      <div className='type-container container'>
+      <div className='boulder-container'>
         <p>Type:</p>
         <p><b>{currentBoulder.type}</b></p>
       </div>
-      <div className='fa-container container'>
+      <div className='boulder-container'>
         <p>FA:</p>
         <p><b>{currentBoulder.fa}</b></p>
       </div>
-      <div className='description-container container'>
+      <div className='boulder-container'>
         <p>Description:</p>
         <p><b>{currentBoulder.description}</b></p>
       </div>
@@ -35,7 +35,7 @@ const BoulderInformation = ({currentBoulder, allBoulders, onBoulderClick}) => {
         {/* pops up a modal */}
         <button className='btn'>Book This Climb</button>
       </div>
-      <div className='spray-box'>
+      <div className='boulder-container'>
         <h5>Spray:</h5>
         <div className='spray-icons'>
           {sprayIcons.map((icon, index) => {

@@ -10,36 +10,53 @@
   width: 100%;
   height: 2em;
   background-color: grey;
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 3px black;
+  color: #FFFFFF
 }
 
 .login-form {
   display: flex;
 }
 
+#username-input {
+  border-radius: 1px;
+  box-shadow: 0 0 1px black;
+}
+
+#password-input {
+  border-radius: 1px;
+  box-shadow: 0 0 1px black;
+}
+
+.login-button {
+  border-radius: 1px;
+  box-shadow: 0 0 1px black;
+}
 .boulder-overview {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .boulder-information {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
+  justify-content: space-evenly;
   height: 80vh;
   width: 35%;
+  padding-right: 40px;
 }
 
 .image-gallery {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
   height: 80vh;
   width:  65%;
 }
 
-.container {
+.boulder-container {
   display: flex;
+  justify-content: space-between;
 }
 
 .total-boulders {
@@ -52,44 +69,74 @@
 }
 
 .boulder-thumbnail {
-  height: 50px;
-  width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  max-width: 50px;
   text-align: center;
   vertical-align: center;
-  border-radius: 50%;
+  border-radius: 10px;
+  margin: 10px;
   border: 1px solid black;
+  box-shadow: 0 0 3px black;
 }
 
 .spray-icons {
   display: flex;
 }
 
+.spray-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .image-container {
   display: flex;
   height: 90%;
   width: 100%;
-  align-self: center;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
+  align-self: center;
   overflow: hidden;
 }
 
 .image-nav-btn {
   all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  max-height: 90%;
+  max-width: 70%;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px black;
+}
 .current-image {
   border-radius: 3px;
   object-fit: contain;
+  height: 95%;
+  width: 100%;
+  box-shadow: 0 0 5px black;
 }
+
 
 .current-image:hover {
   cursor: zoom-in;
+  box-shadow: 0 0 10px black;
 }
 
 .current-expanded-image {
   border-radius: 3px;
   object-fit: contain;
+  box-shadow: 0 0 5px black;
 }
 
 .expanded-gallery {
@@ -115,6 +162,7 @@
   width: 25px;
   border-radius: 50%;
   background-color: black;
+  box-shadow: 0 0 3px black;
 }
 
 .selected-expanded-thumbnail {
@@ -122,6 +170,7 @@
   width: 25px;
   background-color: red;
   border-radius: 50%;
+  box-shadow: 0 0 3px red;
 }
 
 .expanded-thumbnail-container {
@@ -161,6 +210,8 @@
 .thumbnail-carousel-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .selected-thumbnail {
@@ -195,12 +246,15 @@
   display: flex;
   height: 80vh;
   width: 100%;
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .message-board {
   height: 100%;
   width: 75%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .filter-container {
@@ -208,19 +262,19 @@
   flex-direction: column;
   height: 100%;
   width: 25%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .filter-posts-container {
   width: 100%;
   height: 35%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .climb-tags-container {
   width: 100%;
   height: 65%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .create-post-container {
@@ -229,13 +283,13 @@
   align-items: center;
   width: 100%;
   height: 35%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .post-view-container {
   width: 100%;
   max-height: 65%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -243,6 +297,7 @@
 #post-message {
   width: 100%;
   height: 100%;
+  box-shadow: 0 0 3px black;
 }
 
 .post-footer-container {
@@ -264,13 +319,17 @@
   align-self: center;
   height: 50%;
   width: 50%;
+  box-shadow: 0 0 1px black;
 }
 
 .individual-message {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 0 0 3px black;
   height: 25%;
+  margin: 10px
 }
 
 .message-body {
@@ -290,6 +349,7 @@
 
 .tag {
   margin: 2px;
+  box-shadow: 0 0 1px black;
 }
 
 .post-tags {
@@ -302,7 +362,6 @@
   display: flex;
   height: 80vh;
   width: 100%;
-  border: 1px solid black;
 }
 
 .left-bar-container {
@@ -310,7 +369,6 @@
   flex-direction: column;
   height: 100%;
   width: 25%;
-  border: 1px solid black;
 }
 
 .right-bar-container {
@@ -318,7 +376,6 @@
   flex-direction: column;
   height: 100%;
   width: 75%;
-  border: 1px solid black;
 }
 
 .star-rating-container {
@@ -326,7 +383,6 @@
   flex-direction: column;
   height: 50%;
   width: 100%;
-  border: 1px solid black;
 }
 
 .reviews-filter-container {
@@ -334,14 +390,12 @@
   flex-direction: column;
   height: 40%;
   width: 100%;
-  border: 1px solid black;
 }
 
 .boulder-tags-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid black;
 }
 
 .post-review-container {
@@ -349,15 +403,14 @@
   flex-direction: column;
   width: 100%;
   height: 35%;
-  border: 1px solid black;
 }
 
 .reviews-view-container {
   width: 100%;
   height: 65%;
-  border: 1px solid black;
   overflow: hidden;
   overflow-y: scroll;
+  margin-bottom: 20px;
 }
 
 .ratings-bar {
@@ -401,6 +454,7 @@
 .review-submit {
   width: 75%;
   height: 50%;
+  box-shadow: 0 0 1px black;
 }
 
 .review-rating {
@@ -458,4 +512,9 @@
   height: 100%;
   justify-content: center;
   align-items: flex-end;
+}
+
+.ticklist-buttons {
+  display: flex;
+  justify-content: space-between;
 }

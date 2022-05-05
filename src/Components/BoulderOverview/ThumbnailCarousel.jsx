@@ -1,4 +1,5 @@
 import React from 'react';
+import {AiOutlineArrowUp, AiOutlineArrowDown} from 'react-icons/ai';
 
 const ThumbnailCarousel = ({currentBoulder, currentImageIndex, onImageChange, onThumbnailClick}) => {
   if (!currentBoulder.photos[0]) {
@@ -6,7 +7,7 @@ const ThumbnailCarousel = ({currentBoulder, currentImageIndex, onImageChange, on
   }
   return (
     <div className='thumbnail-carousel-container'>
-      <button onClick={(event) => onImageChange(event)} data-direction='up' className='image-nav-btn'>Up</button>
+      <button className='image-nav-btn'><AiOutlineArrowUp onClick={(event) => onImageChange(event)} data-direction='up'/></button>
       {currentBoulder.photos.map((photo, index) => {
         if (currentImageIndex === index) {
           return <img key={`selected_thumbnail${index}`}data-index={index} onClick={(event) => onThumbnailClick(event)} className='selected-thumbnail' src={photo}></img>
@@ -14,7 +15,7 @@ const ThumbnailCarousel = ({currentBoulder, currentImageIndex, onImageChange, on
           return <img key={`thumbnail${index}`} data-index={index} onClick={(event) => onThumbnailClick(event)} className='thumbnail' src={photo}></img>
         }
       })}
-      <button onClick={(event) => onImageChange(event)} data-direction='down' className='image-nav-btn'>Down</button>
+      <button className='image-nav-btn'><AiOutlineArrowDown onClick={(event) => onImageChange(event)} data-direction='down'/></button>
     </div>
   );
 }
